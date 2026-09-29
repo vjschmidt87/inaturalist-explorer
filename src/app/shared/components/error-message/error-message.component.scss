@@ -1,0 +1,38 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.error-container {
+  @include flex-column-center;
+  padding: $spacing-8xl $spacing-4xl;
+  text-align: center;
+}
+
+.error-icon {
+  @include flex-center;
+  width: 48px;
+  height: 48px;
+  border-radius: $border-radius-full;
+  background-color: $danger-light;
+  color: $danger;
+  font-size: $font-size-2xl;
+  font-weight: 700;
+  margin-bottom: $spacing-xl;
+}
+
+.error-title {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $gray-900;
+  margin-bottom: $spacing-md;
+}
+
+.error-text {
+  font-size: $font-size-default;
+  color: $gray-500;
+  max-width: 400px;
+  margin-bottom: $spacing-3xl;
+}
+
+.retry-btn {
+  @include btn-primary;
+}

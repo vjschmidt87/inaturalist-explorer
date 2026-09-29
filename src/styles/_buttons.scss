@@ -1,0 +1,65 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+%btn {
+  @include btn-base;
+}
+
+%btn-primary {
+  @extend %btn;
+  background-color: $primary;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+}
+
+%btn-secondary {
+  @extend %btn;
+  background-color: $white;
+  color: $gray-700;
+  border: 1px solid $gray-300;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-50;
+    border-color: $gray-400;
+  }
+}
+
+%btn-accent {
+  @extend %btn;
+  background-color: $accent;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $accent-dark;
+  }
+}
+
+%btn-danger {
+  @extend %btn;
+  background-color: $danger;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $danger-dark;
+  }
+}
+
+%btn-sm {
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+}
+
+%btn-lg {
+  padding: $spacing-lg $spacing-3xl;
+  font-size: $font-size-lg;
+}
+
+%btn-block {
+  display: flex;
+  width: 100%;
+}

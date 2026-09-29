@@ -1,0 +1,192 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.home {
+  @include container;
+}
+
+// ===== Hero =====
+.hero {
+  text-align: center;
+  padding: $spacing-8xl 0;
+}
+
+.hero-title {
+  font-size: $font-size-5xl;
+  font-weight: 700;
+  color: $gray-900;
+  margin-bottom: $spacing-xl;
+
+  @include tablet {
+    font-size: $font-size-3xl;
+  }
+}
+
+.hero-subtitle {
+  font-size: $font-size-xl;
+  color: $gray-500;
+  max-width: 600px;
+  margin: 0 auto $spacing-4xl;
+  line-height: 1.6;
+
+  @include tablet {
+    font-size: $font-size-default;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: $spacing-xl;
+  justify-content: center;
+
+  .btn-lg {
+    padding: $spacing-lg $spacing-4xl;
+    font-size: $font-size-lg;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+// ===== Recent Section =====
+.recent-section {
+  padding-bottom: $spacing-8xl;
+}
+
+.section-header {
+  @include flex-between;
+  margin-bottom: $spacing-3xl;
+}
+
+.section-title {
+  @include heading-md;
+}
+
+.view-all {
+  font-size: $font-size-md;
+  font-weight: 500;
+  color: $primary;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+.observation-grid {
+  @include card-grid;
+}
+
+.obs-card {
+  @include card-base;
+  @include card-hover-lift(-2px);
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.obs-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .no-image {
+    @include image-placeholder;
+    font-size: $font-size-sm;
+  }
+}
+
+.quality-badge {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+}
+
+.obs-info {
+  padding: $spacing-lg;
+}
+
+.obs-name {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $gray-900;
+  @include text-truncate;
+}
+
+.obs-scientific {
+  font-size: $font-size-sm;
+  font-style: italic;
+  color: $gray-500;
+  margin-top: $spacing-xs;
+}
+
+.obs-meta {
+  display: flex;
+  gap: $spacing-md;
+  font-size: $font-size-sm;
+  color: $gray-400;
+  margin-top: $spacing-md;
+}
+
+.obs-place {
+  font-size: $font-size-xs;
+  color: $gray-400;
+  margin-top: $spacing-xs;
+  @include text-truncate;
+}
+
+// ===== Features Section =====
+.features-section {
+  padding-bottom: $spacing-8xl;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $grid-gap;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  @include card-base;
+  @include card-hover-lift(-4px);
+  padding: $spacing-4xl;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: $spacing-xl;
+}
+
+.feature-card h3 {
+  font-size: $font-size-xl;
+  font-weight: 600;
+  color: $gray-900;
+  margin-bottom: $spacing-md;
+}
+
+.feature-card p {
+  font-size: $font-size-md;
+  color: $gray-500;
+  line-height: 1.5;
+}

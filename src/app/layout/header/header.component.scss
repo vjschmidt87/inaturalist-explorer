@@ -1,0 +1,93 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  background-color: $white;
+  border-bottom: 1px solid $gray-200;
+  height: $header-height;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  @include flex-between;
+  @include container;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  text-decoration: none;
+  color: $gray-900;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+.logo-icon {
+  font-size: $font-size-2xl;
+}
+
+.logo-text {
+  font-size: $font-size-xl;
+  font-weight: 700;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.nav-link {
+  padding: $spacing-md $spacing-xl;
+  border-radius: $border-radius;
+  font-size: $font-size-md;
+  font-weight: 500;
+  color: $gray-600;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    background-color: $gray-50;
+    color: $gray-900;
+  }
+
+  &.active {
+    background-color: $primary-alpha-10;
+    color: $primary-dark;
+  }
+
+  @include mobile {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-sm;
+  }
+}
+
+.lang-toggle {
+  margin-left: $spacing-sm;
+  padding: $spacing-xs $spacing-md;
+  border: 1px solid $gray-300;
+  border-radius: $border-radius;
+  background: $white;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $gray-700;
+  cursor: pointer;
+  transition: $transition;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $primary-alpha-10;
+    border-color: $primary;
+    color: $primary-dark;
+  }
+}

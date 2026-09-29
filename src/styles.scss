@@ -1,0 +1,157 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'styles/typography';
+@use 'styles/buttons';
+@use 'styles/forms';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-family;
+  color: $gray-800;
+  background-color: $gray-50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-3xl;
+}
+
+.btn {
+  @include btn-base;
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $white;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-dark;
+    transform: translateY(-1px);
+    box-shadow: $shadow-md;
+  }
+
+  &:disabled {
+    background-color: $gray-300;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.btn-secondary {
+  background-color: $white;
+  color: $gray-700;
+  border: 1px solid $gray-300;
+
+  &:hover:not(:disabled) {
+    background-color: $gray-50;
+    border-color: $gray-400;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border-radius: $border-radius-full;
+  line-height: 1.5;
+}
+
+.badge-research {
+  background-color: $success-light;
+  color: $success-text;
+}
+
+.badge-needs-id {
+  background-color: $warning-light;
+  color: $warning-text;
+}
+
+.badge-casual {
+  background-color: $gray-100;
+  color: $gray-600;
+}
+
+.card {
+  background: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid $gray-200;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (max-width: $breakpoint-md) {
+  .container {
+    padding: 0 $spacing-xl;
+  }
+}

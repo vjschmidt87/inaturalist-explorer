@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.observation-list-page {
+  @include container;
+}
+
+.page-title {
+  @include heading-lg;
+  margin-bottom: $spacing-3xl;
+}
+
+.results-count {
+  font-size: $font-size-md;
+  color: $gray-500;
+  margin-bottom: $spacing-xl;
+}
+
+.observation-grid {
+  @include card-grid;
+}
+
+.empty-state {
+  @include empty-state;
+}

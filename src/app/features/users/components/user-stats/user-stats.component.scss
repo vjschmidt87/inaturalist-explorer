@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-xl;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-item {
+  @include card-base;
+  @include flex-column-center;
+  padding: $spacing-3xl;
+}
+
+.stat-value {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  color: $primary-dark;
+}
+
+.stat-label {
+  font-size: $font-size-sm;
+  color: $gray-500;
+  margin-top: $spacing-xs;
+}

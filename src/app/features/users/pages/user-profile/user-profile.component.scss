@@ -1,0 +1,62 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.profile-page {
+  @include container;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3xl;
+  margin-bottom: $spacing-3xl;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: $border-radius-full;
+  object-fit: cover;
+  border: 3px solid $primary-light;
+}
+
+.profile-name {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.profile-login {
+  font-size: $font-size-md;
+  color: $gray-500;
+  margin-top: $spacing-xs;
+}
+
+.profile-joined {
+  font-size: $font-size-sm;
+  color: $gray-400;
+  margin-top: $spacing-xs;
+}
+
+.profile-bio {
+  @include card-base;
+  padding: $spacing-3xl;
+  margin-bottom: $spacing-3xl;
+  font-size: $font-size-default;
+  color: $gray-700;
+  line-height: 1.6;
+}
+
+.profile-section {
+  margin-top: $spacing-4xl;
+}
+
+.section-title {
+  @include heading-md;
+  margin-bottom: $spacing-3xl;
+}

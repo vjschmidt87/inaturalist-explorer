@@ -1,0 +1,142 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.detail-page {
+  @include container;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: $font-size-md;
+  color: $gray-500;
+  margin-bottom: $spacing-3xl;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: $spacing-4xl;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-info {
+  @include flex-column;
+  gap: $spacing-xl;
+}
+
+.info-card {
+  @include card-base;
+  padding: $spacing-3xl;
+}
+
+.species-name {
+  font-size: $font-size-3xl;
+  font-weight: 700;
+  color: $gray-900;
+  margin-bottom: $spacing-md;
+}
+
+.scientific-name {
+  font-style: italic;
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-xs;
+
+  a {
+    color: $primary;
+
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+}
+
+.common-name {
+  font-size: $font-size-md;
+  color: $gray-500;
+  margin-bottom: $spacing-xl;
+}
+
+.quality-badge {
+  display: inline-block;
+  margin-top: $spacing-md;
+}
+
+.card-title {
+  font-size: $font-size-md;
+  font-weight: 600;
+  color: $gray-500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: $spacing-xl;
+}
+
+.observer-link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover .observer-name {
+    color: $primary;
+  }
+}
+
+.observer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: $border-radius-full;
+  object-fit: cover;
+}
+
+.observer-name {
+  font-weight: 600;
+  color: $gray-900;
+  transition: $transition;
+}
+
+.observer-full-name {
+  display: block;
+  font-size: $font-size-sm;
+  color: $gray-500;
+}
+
+.details-list {
+  @include flex-column;
+  gap: $spacing-md;
+}
+
+.detail-item {
+  @include flex-between;
+
+  dt {
+    font-size: $font-size-md;
+    color: $gray-500;
+  }
+
+  dd {
+    font-size: $font-size-md;
+    font-weight: 500;
+    color: $gray-900;
+  }
+}
+
+.description {
+  font-size: $font-size-default;
+  color: $gray-700;
+  line-height: 1.6;
+}
+
+.view-on-inat {
+  @include btn-secondary;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}

@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.spinner-container {
+  @include flex-column-center;
+  padding: $spacing-8xl;
+  gap: $spacing-xl;
+}
+
+.spinner-message {
+  font-size: $font-size-md;
+  color: $gray-500;
+}

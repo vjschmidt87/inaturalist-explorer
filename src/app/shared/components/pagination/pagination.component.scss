@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.pagination {
+  @include flex-center;
+  gap: $spacing-xl;
+  padding: $spacing-3xl 0;
+}
+
+.page-info {
+  font-size: $font-size-md;
+  color: $gray-600;
+}
+
+.total-count {
+  color: $gray-400;
+}
+
+.page-btn {
+  @include btn-secondary;
+  @include respond-below($breakpoint-xs) {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+}

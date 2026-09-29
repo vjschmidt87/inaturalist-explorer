@@ -1,0 +1,68 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.filters {
+  @include card-base;
+  padding: $spacing-3xl;
+  margin-bottom: $spacing-3xl;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-xl;
+
+  & + & {
+    margin-top: $spacing-xl;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-group {
+  grid-column: span 1;
+}
+
+.filter-label {
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  color: $gray-600;
+  margin-bottom: $spacing-sm;
+}
+
+.filter-input {
+  @include form-input-base;
+}
+
+.filter-select {
+  @include form-input-base;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.filter-actions {
+  @include flex-column;
+  justify-content: flex-end;
+}
+
+.btn-reset {
+  @include btn-base;
+  color: $gray-500;
+  font-size: $font-size-sm;
+  padding: $spacing-base;
+
+  &:hover {
+    color: $danger;
+  }
+}

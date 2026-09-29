@@ -1,0 +1,12 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.observations-grid {
+  @include card-grid;
+}
+
+.no-observations {
+  text-align: center;
+  color: $gray-500;
+  padding: $spacing-4xl;
+}

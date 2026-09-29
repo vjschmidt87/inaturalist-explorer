@@ -1,0 +1,59 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.taxonomy-tree {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  padding: $spacing-xl;
+  background-color: $gray-50;
+  border-radius: $border-radius-lg;
+}
+
+.taxon-node {
+  display: inline-flex;
+  flex-direction: column;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $border-radius;
+  text-decoration: none;
+  transition: $transition;
+
+  &:hover {
+    background-color: $primary-alpha-10;
+  }
+
+  &.current {
+    background-color: $primary-alpha-15;
+    border: 1px solid $primary-alpha-20;
+  }
+}
+
+.rank {
+  font-size: $font-size-xs;
+  color: $gray-400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.name {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $gray-800;
+}
+
+.scientific {
+  font-size: $font-size-xs;
+  font-style: italic;
+  color: $gray-500;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.arrow {
+  color: $gray-300;
+  font-size: $font-size-sm;
+}

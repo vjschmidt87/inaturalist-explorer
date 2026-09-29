@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.species-list-page {
+  @include container;
+}
+
+.page-title {
+  @include heading-lg;
+  margin-bottom: $spacing-3xl;
+}
+
+.search-bar {
+  margin-bottom: $spacing-3xl;
+}
+
+.search-input {
+  @include form-input-base;
+  max-width: 500px;
+  padding: $spacing-lg $spacing-xl;
+  font-size: $font-size-default;
+}
+
+.results-count {
+  font-size: $font-size-md;
+  color: $gray-500;
+  margin-bottom: $spacing-xl;
+}
+
+.species-grid {
+  @include card-grid;
+}
+
+.empty-state {
+  @include empty-state;
+}
